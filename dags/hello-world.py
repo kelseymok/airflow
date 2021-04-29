@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
-
+# Use the best practices for python -> classes and call classes
 default_args = {
   'owner': 'airflow',
   'depends_on_past': False,
@@ -16,12 +16,16 @@ default_args = {
 
 dag = DAG('helloworld', default_args=default_args)
 
-templated_command = """
-    echo "Hello World"
-"""
 
 t1 = BashOperator(
-    task_id='echo_hello_world',
+    task_id='zebra',
     bash_command="/usr/local/airflow/src/hello-world.sh Zebra",
     dag=dag)
 
+
+t2 = BashOperator(
+    task_id='horse',
+    bash_command="/usr/local/airflow/src/hello-world.sh Horse",
+    dag=dag)
+
+t1 >> t2
