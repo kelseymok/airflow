@@ -5,3 +5,4 @@ This is an example repository for Airflow.
 ```bash
 ./go run
 ```
+Navigate to [localhost:8080](http://localhost:8080)
