@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 default_args = {
   'owner': 'airflow',
   'depends_on_past': False,
-  'start_date': datetime(2018, 8, 1),
+  'start_date': datetime(2020, 4, 29),
   'email': ['foo@example.com'],
   'email_on_failure': False,
   'email_on_retry': False,
@@ -19,13 +19,13 @@ dag = DAG('helloworld', default_args=default_args)
 
 t1 = BashOperator(
     task_id='zebra',
-    bash_command="/usr/local/airflow/src/hello-world.sh Zebra",
+    bash_command="/opt/airflow/plugins/hello-world.sh Zebra",
     dag=dag)
 
 
 t2 = BashOperator(
     task_id='horse',
-    bash_command="/usr/local/airflow/src/hello-world.sh Horse",
+    bash_command="/opt/airflow/plugins/hello-world.sh Horse",
     dag=dag)
 
 t1 >> t2

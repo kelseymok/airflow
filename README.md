@@ -1,8 +1,11 @@
 # Airflow
 This is an example repository for Airflow.
 
+https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html
+
+Running Airflow 1.10.9 (latest from puckel)
 ## Setup
-```bash
-./go run
-```
-Navigate to [localhost:8080](http://localhost:8080)
+Run Airflow: `./go run`
+Bring down Airflow containers: `./go destroy`
+
+Navigate to [localhost:8080](http://localhost:8080) with user/password (airflow/airflow)

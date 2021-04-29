@@ -8,12 +8,16 @@ script_dir=$(cd "$(dirname "$0")" ; pwd -P)
 
 goal_run() {
   pushd "${script_dir}" > /dev/null
-    docker run -d \
-    -p 8080:8080 \
-    -v ${script_dir}/dags:/usr/local/airflow/dags \
-    -v ${script_dir}/src:/usr/local/airflow/src \
-    -v ${script_dir}/requirements.txt/:/requirements.txt \
-    puckel/docker-airflow
+    curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.0.2/docker-compose.yaml'
+
+    docker-compose up airflow-init
+    docker-compose up
+  popd > /dev/null
+}
+
+goal_destroy() {
+  pushd "${script_dir}" > /dev/null
+    docker-compose down
   popd > /dev/null
 }
 
