@@ -9,3 +9,6 @@ Run Airflow: `./go run`
 Bring down Airflow containers: `./go destroy`
 
 Navigate to [localhost:8080](http://localhost:8080) with user/password (airflow/airflow)
+
+## Notes
+* This takes up a fair bit of energy. Make sure you designate 4GB Memory for Docker (Docker > Preferences > Resources)
