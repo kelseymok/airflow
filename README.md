@@ -27,7 +27,7 @@ Username/password = `airflow/airflow`
 
 ## Tutorial
 * Run through the [offical Tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html)
-* HINT: add new DAGs in the `./dag` directory (it is mounted as a volume)
+* HINT: add new DAGs in the `./dags` directory (it is mounted as a volume)
 
 ## Notes
 * This takes up a fair bit of energy. Make sure you designate 4GB Memory for Docker (Docker > Preferences > Resources)
